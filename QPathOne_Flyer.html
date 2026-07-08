@@ -4,139 +4,123 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QPathOne — Flyer</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a1209;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:2rem;font-family:'Segoe UI',system-ui,sans-serif}
-.flyer{width:100%;max-width:440px;background:#0E1A14;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
-.flyer-top{background:#085041;padding:2.25rem 2rem 1.75rem}
-.logo-row{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem}
-.logo-mark{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.18);flex-shrink:0}
-.wordmark{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:700;color:white;letter-spacing:-0.01em;line-height:1.1}
-.wordmark span{color:#9FE1CB}
-.wordmark em{font-style:italic}
-.tagline-sm{font-size:11px;color:rgba(200,240,226,0.6);letter-spacing:0.12em;text-transform:uppercase;font-family:monospace;margin-top:3px}
-.headline{font-family:'Playfair Display',Georgia,serif;font-size:30px;font-weight:700;color:white;line-height:1.2;margin-bottom:.85rem}
-.headline span{color:#9FE1CB}
-.sub{font-size:14px;color:rgba(200,240,226,0.8);line-height:1.7;margin-bottom:1.5rem}
-.tat-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.tat{background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:11px 14px}
-.tat-label{font-size:10px;font-family:monospace;letter-spacing:0.1em;text-transform:uppercase;color:rgba(200,240,226,0.45);margin-bottom:4px}
-.tat-val{font-size:14px;font-weight:600;color:white}
-.flyer-mid{background:#0E1A14;padding:1.75rem 2rem}
-.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
-.pill{font-size:11px;padding:4px 11px;border-radius:12px;font-family:monospace;letter-spacing:0.04em;border:0.5px solid}
-.pill.teal{background:rgba(29,158,117,0.14);color:#5DCAA5;border-color:rgba(29,158,117,0.3)}
-.pill.amber{background:rgba(239,159,39,0.12);color:#EF9F27;border-color:rgba(239,159,39,0.25)}
-.pill.blue{background:rgba(55,138,221,0.12);color:#85B7EB;border-color:rgba(55,138,221,0.25)}
-.why-head{font-size:11px;font-family:monospace;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:.85rem}
-.why-list{display:flex;flex-direction:column;gap:9px;margin-bottom:1.5rem}
-.why-item{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:rgba(200,240,226,0.8);line-height:1.55}
-.why-icon{width:20px;height:20px;border-radius:50%;background:#085041;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:10px;color:#9FE1CB;font-weight:700}
-.divider{height:1px;background:rgba(255,255,255,0.07);margin:0 0 1.5rem}
-.flyer-bottom{background:#04342C;padding:1.5rem 2rem 0}
-.cta-head{font-size:11px;font-family:monospace;letter-spacing:0.14em;text-transform:uppercase;color:rgba(200,240,226,0.4);margin-bottom:.85rem}
-.contact-row{display:flex;align-items:center;gap:10px;margin-bottom:.75rem}
-.contact-icon{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.contact-val{font-size:14.5px;color:white;font-weight:500}
-.contact-sub{font-size:11.5px;color:rgba(200,240,226,0.4);margin-top:2px}
-.footer-strip{background:rgba(0,0,0,0.3);margin:1.5rem -2rem 0;padding:.85rem 2rem;display:flex;justify-content:space-between;align-items:center}
-.footer-left{font-size:11px;font-family:monospace;color:rgba(200,240,226,0.3);letter-spacing:0.06em}
-.cert-badges{display:flex;gap:6px}
-.cert{font-size:9.5px;padding:3px 8px;border-radius:4px;font-family:monospace;font-weight:600;letter-spacing:0.07em;background:rgba(255,255,255,0.06);color:rgba(200,240,226,0.5);border:0.5px solid rgba(200,240,226,0.12)}
-.print-note{text-align:center;color:rgba(200,240,226,0.25);font-size:12px;font-family:monospace;margin-top:1.5rem;letter-spacing:.04em}
+body{background:#F8F7F3;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:2rem;font-family:'Segoe UI',system-ui,sans-serif}
+.fl{width:100%;max-width:440px;background:white;border-radius:2px;box-shadow:0 8px 40px rgba(14,26,20,0.14);border:0.5px solid rgba(14,26,20,0.08)}
+.fl-hero{background:#0E1A14;padding:2.5rem 2rem 2rem;position:relative;overflow:hidden}
+.fl-hero::after{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(15,110,86,0.2);pointer-events:none}
+.fl-hero::before{content:'';position:absolute;top:-20px;right:-20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(15,110,86,0.12);pointer-events:none}
+.fl-logo{display:flex;align-items:center;gap:10px;margin-bottom:2.5rem}
+.fl-mark{width:32px;height:32px;border-radius:6px;background:#0F6E56;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fl-mark svg{width:18px;height:18px}
+.fl-wm{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:white;letter-spacing:-0.01em}
+.fl-wm span{color:#1D9E75}
+.fl-wm em{font-style:italic}
+.fl-h{font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:400;color:white;line-height:1.22;margin-bottom:1rem;letter-spacing:-0.01em}
+.fl-h strong{font-weight:700;font-style:italic;color:#9FE1CB}
+.fl-tagline{font-size:12px;color:#5A6E62;letter-spacing:0.06em;line-height:1.6;max-width:260px}
+.fl-rule{width:32px;height:1px;background:#0F6E56;margin:1.5rem 0}
+.fl-tat{display:flex;gap:2rem}
+.fl-tat-label{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:#5A6E62;font-family:monospace;margin-bottom:3px}
+.fl-tat-val{font-size:14px;font-weight:500;color:#C8F0E2;font-family:'Playfair Display',Georgia,serif;font-style:italic}
+.fl-body{padding:2rem 2rem 0;background:white}
+.fl-section{margin-bottom:1.75rem}
+.fl-sh{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#0F6E56;font-family:monospace;margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.fl-sh::after{content:'';flex:1;height:0.5px;background:#E1F5EE}
+.fl-sh-why{font-size:9px;letter-spacing:0.2em;color:#0F6E56;font-family:monospace;margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.fl-sh-why::after{content:'';flex:1;height:0.5px;background:#E1F5EE}
+.fl-specs{display:grid;grid-template-columns:1fr 1fr;gap:4px 1rem}
+.fl-spec{font-size:12px;color:#5A6E62;padding:3px 0;border-bottom:0.5px solid #F0EEE9;display:flex;align-items:center;gap:6px}
+.fl-spec::before{content:'';width:4px;height:4px;border-radius:50%;background:#0F6E56;flex-shrink:0}
+.fl-spec.accent{color:#0F6E56;font-weight:500;grid-column:1/-1}
+.fl-whys{display:flex;flex-direction:column;gap:.85rem}
+.fl-why{display:flex;align-items:flex-start;gap:12px}
+.fl-why-num{font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;font-style:italic;color:#E1F5EE;line-height:1;width:18px;flex-shrink:0;margin-top:-1px}
+.fl-why-text{font-size:12.5px;color:#2E3E36;line-height:1.6}
+.fl-contact-band{background:#F8F7F3;margin:0 -2rem;padding:1.25rem 2rem;border-top:0.5px solid #EAE8E2;border-bottom:0.5px solid #EAE8E2}
+.fl-email{font-size:14px;font-weight:500;color:#0E1A14;margin-bottom:2px}
+.fl-email-sub{font-size:11px;color:#8A9E92}
+.fl-foot{background:#0E1A14;padding:.85rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.fl-foot-url{font-size:10px;font-family:monospace;color:#5A6E62;letter-spacing:.06em}
+.fl-badges{display:flex;flex-direction:column;align-items:flex-end}
+.fl-badge{font-size:9px;padding:2px 7px;border-radius:2px;font-family:monospace;letter-spacing:.06em;color:#5A6E62;border:0.5px solid #2E3E36}
+.print-note{text-align:center;color:#8A9E92;font-size:12px;font-family:monospace;margin-top:1.5rem}
 @media print{body{background:white;padding:0}.print-note{display:none}}
 </style>
 </head>
 <body>
 <div>
-<div class="flyer">
-
-  <!-- TOP BAND -->
-  <div class="flyer-top">
-    <div class="logo-row">
-      <div class="logo-mark">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round">
-          <circle cx="12" cy="12" r="8"/>
-          <circle cx="12" cy="12" r="4.5"/>
+<div class="fl">
+  <div class="fl-hero">
+    <div class="fl-logo">
+      <div class="fl-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4.5"/>
           <circle cx="12" cy="12" r="1.5" fill="white" stroke="none"/>
-          <line x1="12" y1="4" x2="12" y2="7.5"/>
-          <line x1="12" y1="16.5" x2="12" y2="20"/>
-          <line x1="4" y1="12" x2="7.5" y2="12"/>
-          <line x1="16.5" y1="12" x2="20" y2="12"/>
+          <line x1="12" y1="4" x2="12" y2="7.5"/><line x1="12" y1="16.5" x2="12" y2="20"/>
+          <line x1="4" y1="12" x2="7.5" y2="12"/><line x1="16.5" y1="12" x2="20" y2="12"/>
         </svg>
       </div>
-      <div>
-        <div class="wordmark">Q<span>Path</span><em>One</em></div>
-        <div class="tagline-sm">Telepathology &amp; Oncology Support</div>
-      </div>
+      <div class="fl-wm">Q<span>Path</span><em>One</em></div>
     </div>
-
-    <div class="headline">Specialist pathology<br>second opinions —<br><span>delivered to you.</span></div>
-    <div class="sub">UK &amp; US board-certified consultant pathologists reviewing your histopathology cases remotely. Fast, reliable, and affordable.</div>
-
-    <div class="tat-row">
-      <div class="tat"><div class="tat-label">Standard report</div><div class="tat-val">5 working days</div></div>
-      <div class="tat"><div class="tat-label">Urgent report</div><div class="tat-val">48 hours</div></div>
+    <div class="fl-h">Specialist pathology<br>second opinions —<br><strong>when it matters most.</strong></div>
+    <div class="fl-tagline">UK & US board-certified Consultant pathologists. Remote. Structured. Reliable.</div>
+    <div class="fl-rule"></div>
+    <div class="fl-tat">
+      <div><div class="fl-tat-label">Routine</div><div class="fl-tat-val">2 – 5 days</div></div>
+      <div><div class="fl-tat-label">Urgent</div><div class="fl-tat-val">24 – 48 hours</div></div>
     </div>
   </div>
 
-  <!-- MID BAND -->
-  <div class="flyer-mid">
-    <div class="pill-row">
-      <span class="pill teal">Breast oncology</span>
-      <span class="pill teal">Upper GI</span>
-      <span class="pill teal">Lower GI</span>
-      <span class="pill teal">Lung</span>
-      <span class="pill teal">Head &amp; Neck</span>
-      <span class="pill teal">Thyroid</span>
-      <span class="pill teal">Neuropathology</span>
-      <span class="pill teal">Urology</span>
-      <span class="pill teal">Hepatobiliary</span>
-      <span class="pill teal">Gynaecology</span>
-      <span class="pill teal">Haematopathology / Lymphoreticular</span>
-      <span class="pill teal">Skin &amp; Dermatopathology</span>
-      <span class="pill teal">Cytology</span>
-      <span class="pill amber">IHC &amp; special stains</span>
-      <span class="pill blue">MDT support available</span>
-    </div>
-
-    <div class="why-head">Why QPathOne</div>
-    <div class="why-list">
-      <div class="why-item"><div class="why-icon">✓</div><span>UK GMC-registered and US board-certified consultant pathologists</span></div>
-      <div class="why-item"><div class="why-icon">✓</div><span>Structured second opinion report with diagnostic confidence grading</span></div>
-      <div class="why-item"><div class="why-icon">✓</div><span>Supports MDT, Tumour board, and MDM discussion preparation</span></div>
-      <div class="why-item"><div class="why-icon">✓</div><span>Simple digital submission — H&amp;E, IHC, special stains, up to 50 images per case</span></div>
-      <div class="why-item"><div class="why-icon">✓</div><span>Pilot pricing available for partner hospitals in Nigeria &amp; sub-Saharan Africa</span></div>
-    </div>
-    <div class="divider"></div>
-  </div>
-
-  <!-- BOTTOM BAND -->
-  <div class="flyer-bottom">
-    <div class="cta-head">Get in touch</div>
-    <div class="contact-row">
-      <div class="contact-icon">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-      </div>
-      <div>
-        <div class="contact-val">enquiries@Qpath1.com</div>
-        <div class="contact-sub">Case submissions &amp; general enquiries</div>
+  <div class="fl-body">
+    <div class="fl-section" style="margin-top:1.75rem">
+      <div class="fl-sh">Specialties</div>
+      <div class="fl-specs">
+        <div class="fl-spec">Breast</div>
+        <div class="fl-spec">Skin &amp; Dermatopathology</div>
+        <div class="fl-spec">Urology</div>
+        <div class="fl-spec">Gynaecology</div>
+        <div class="fl-spec">Upper GI</div>
+        <div class="fl-spec">Cytology</div>
+        <div class="fl-spec">Lower GI</div>
+        <div class="fl-spec">Haematopathology</div>
+        <div class="fl-spec">Lung</div>
+        <div class="fl-spec">Neuropathology</div>
+        <div class="fl-spec">Head &amp; Neck</div>
+        <div class="fl-spec">Hepatobiliary</div>
+        <div class="fl-spec">Thyroid</div>
+        <div class="fl-spec">Bone</div>
+        <div class="fl-spec accent" style="grid-column:1">IHC &amp; Special stains</div>
+        <div class="fl-spec accent" style="grid-column:2">MDT support</div>
       </div>
     </div>
 
-    <div class="footer-strip">
-      <div class="footer-left">qpath1.com</div>
-      <div class="cert-badges">
-        <span class="cert">UK GMC</span>
-        <span class="cert">US Board Certified</span>
-        <span class="cert">Nigeria Pilot</span>
+    <div class="fl-section">
+      <div class="fl-sh-why">WHY QPathOne?</div>
+      <div class="fl-whys">
+        <div class="fl-why"><div class="fl-why-num">1</div><div class="fl-why-text">UK GMC-registered and US board-certified Consultant pathologists</div></div>
+        <div class="fl-why"><div class="fl-why-num">2</div><div class="fl-why-text">Structured second opinion report with diagnostic confidence grading</div></div>
+        <div class="fl-why"><div class="fl-why-num">3</div><div class="fl-why-text">MDT meetings, Tumour boards discussion support</div></div>
+        <div class="fl-why"><div class="fl-why-num">4</div><div class="fl-why-text">Digital submission — H&amp;E, IHC and special stains</div></div>
+        <div class="fl-why"><div class="fl-why-num">5</div><div class="fl-why-text">Information for partner hospitals in Nigeria, sub-Saharan Africa, Asia &amp; rest of world</div></div>
+      </div>
+    </div>
+
+    <div class="fl-contact-band">
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+        <div class="fl-email">enquiries@QPath1.com</div>
+        <div class="fl-email-sub">Case submissions &amp; general enquiries</div>
       </div>
     </div>
   </div>
 
-</div>
-<p class="print-note">Open in browser → File → Print → Save as PDF, or take a screenshot</p>
+  <div class="fl-foot" style="padding:.75rem 2rem">
+    <span class="fl-foot-url">QPath1.com</span>
+    <span class="fl-badge" style="font-size:8px;white-space:nowrap">UK GMC &nbsp;·&nbsp; US Board &nbsp;·&nbsp; Nigeria/Africa/Asia/World</span>
+  </div>
+
 </div>
 </body>
 </html>

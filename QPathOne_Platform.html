@@ -1419,9 +1419,11 @@ async function doLoginSupa() {
     var authData = await supaSignIn(email, pw);
     var profile  = await supaGetProfile(authData.user.id);
     if (profile) {
-      currentRole = profile.role;
+      // Map full role name to short form used by screens
+      var roleMap = { 'pathologist':'path', 'administrator':'admin', 'client':'client', 'admin':'admin', 'path':'path' };
+      currentRole = roleMap[profile.role] || profile.role;
       currentUserId = authData.user.id;
-      currentHospital = profile.hospital || demoAccounts[currentRole].name;
+      currentHospital = profile.hospital || (demoAccounts[currentRole] ? demoAccounts[currentRole].name : profile.name);
     } else {
       // Fall back to demo role selected
       currentUserId = authData.user.id;
@@ -1494,8 +1496,11 @@ function signOut() {
 }
 
 function enterPortal(role, name) {
+  // Map Supabase role names to screen IDs
+  var screenId = role === 'pathologist' ? 'path' : role === 'administrator' ? 'admin' : role;
+  currentRole = screenId; // keep internal role as short form
   document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
-  document.getElementById('screen-' + role).classList.add('active');
+  document.getElementById('screen-' + screenId).classList.add('active');
   var el;
   el = document.getElementById('client-user-name'); if(el) el.textContent = name;
   el = document.getElementById('path-user-name');   if(el) el.textContent = name;
