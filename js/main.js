@@ -30,19 +30,15 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
 });
 
 // ── CONTACT FORM ──────────────────────────────────────────────────
+// Form submits natively to Formspree — no JS interception needed
 var form = document.getElementById('contact-form');
 if (form) {
   form.addEventListener('submit', function(e) {
-    e.preventDefault();
     var btn = form.querySelector('button[type=submit]');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    setTimeout(function() {
-      form.innerHTML = '<div style="text-align:center;padding:2rem">'
-        + '<div style="font-size:40px;margin-bottom:1rem;color:#2FA37C">✓</div>'
-        + '<h3 style="font-family:\'Cormorant Garamond\',Georgia,serif;font-size:1.75rem;color:#0D1F19;margin-bottom:.5rem">Message received</h3>'
-        + '<p style="font-size:14px;color:#5C7268;font-weight:300;line-height:1.7">Thank you for getting in touch. We will respond to your enquiry within one working day.</p>'
-        + '</div>';
-    }, 1200);
+    if (btn) {
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+    }
+    // Allow native form submission to Formspree
   });
 }
