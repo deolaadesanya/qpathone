@@ -38,7 +38,7 @@
   <div class="container" style="position:relative;z-index:1">
     <div class="eyebrow center">Get in touch</div>
     <h1>We'd like to<br>hear from you.</h1>
-    <p>Case submissions, second opinion requests, partnership enquiries, and general questions.</p>
+    <p>Case submissions, opinion requests, partnership enquiries, and general questions.</p>
   </div>
 </div>
 
@@ -128,16 +128,25 @@
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
+
+
 <script>
-// Show success message if redirected back after submission
+// Fade up animations
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+// Show success if redirected back
 if (window.location.search.includes('sent=true')) {
   var form = document.getElementById('contact-form');
   if (form) {
     form.innerHTML = '<div style="text-align:center;padding:3rem 2rem">'
-      + '<div style="font-size:40px;margin-bottom:1rem;color:#2FA37C">✓</div>'
+      + '<div style="font-size:40px;margin-bottom:1rem;color:#2FA37C">&#10003;</div>'
       + '<h3 style="font-family:Cormorant Garamond,Georgia,serif;font-size:1.75rem;font-weight:600;color:#0D1F19;margin-bottom:.75rem">Message received</h3>'
-      + '<p style="font-size:14px;font-weight:300;color:#5C7268;line-height:1.8;max-width:400px;margin:0 auto">Thank you for getting in touch. We will respond to your enquiry within one working day.</p>'
+      + '<p style="font-size:14px;font-weight:300;color:#5C7268;line-height:1.8;max-width:400px;margin:0 auto">Thank you. We will respond within one working day.</p>'
       + '</div>';
   }
 }
