@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — QPathOne</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4.5"/>
+          <circle cx="12" cy="12" r="1.5" fill="white" stroke="none"/>
+          <line x1="12" y1="4" x2="12" y2="7.5"/><line x1="12" y1="16.5" x2="12" y2="20"/>
+          <line x1="4" y1="12" x2="7.5" y2="12"/><line x1="16.5" y1="12" x2="20" y2="12"/>
+        </svg>
+      </div>
+      <span class="wordmark">Q<span class="w-path">Path</span><span class="w-one">One</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="platform.html">Platform</a>
+      <a href="services.html">Services</a>
+      <a class="active" href="contact.html">Contact</a>
+      <a href="QPathOne_Platform.html" class="nav-cta">Open Platform →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="hero-bg"><div class="hero-circle"></div><div class="hero-circle"></div></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="eyebrow center">Get in touch</div>
+    <h1>We'd like to<br>hear from you.</h1>
+    <p>Case submissions, second opinion requests, partnership enquiries, and general questions.</p>
+  </div>
+</div>
+
+<section style="background:white">
+  <div class="container">
+    <div class="grid-2-1">
+      <div>
+        <div class="eyebrow">Send a message</div>
+        <h2 class="display" style="margin-bottom:2rem">How can we <strong>help?</strong></h2>
+        <form id="contact-form" action="https://formspree.io/f/xaqgrjkp" method="POST">
+          <input type="hidden" name="_subject" value="New enquiry from QPath1.com">
+          <div class="grid-2 gap-sm mb-md">
+            <div class="form-group"><label class="form-label">Name</label><input type="text" id="cf-name" name="name" class="form-input" placeholder="Dr Your Name" required></div>
+            <div class="form-group"><label class="form-label">Email</label><input type="email" id="cf-email" name="email" class="form-input" placeholder="you@hospital.com" required></div>
+          </div>
+          <div class="form-group" style="margin-bottom:1.25rem"><label class="form-label">Hospital / Institution</label><input type="text" id="cf-hospital" name="hospital" class="form-input" placeholder="Your hospital or organisation"></div>
+          <div class="form-group" style="margin-bottom:1.25rem">
+            <label class="form-label">Enquiry type</label>
+            <select id="cf-type" name="enquiry_type" class="form-select">
+              <option value="">Select…</option>
+              <option>Second opinion / case submission</option>
+              <option>Platform access / demo</option>
+              <option>Hospital partnership</option>
+              <option>Research collaboration</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:2rem"><label class="form-label">Message</label><textarea id="cf-message" name="message" class="form-textarea" placeholder="Tell us about your case, your hospital, or your enquiry…" required></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send message →</button>
+          <p style="font-size:12px;font-weight:300;color:var(--ink4);text-align:center;margin-top:.75rem">Your message is sent directly to enquiries@QPath1.com</p>
+        </form>
+        
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;padding-top:4rem">
+        <div class="card flat" style="padding:1.75rem">
+          <div style="font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--emerald);margin-bottom:.75rem">Email</div>
+          <a href="mailto:enquiries@QPath1.com" style="font-size:16px;font-weight:400;color:var(--ink);transition:color 0.2s" onmouseover="this.style.color='#2FA37C'" onmouseout="this.style.color='#0D1F19'">enquiries@QPath1.com</a>
+          <div style="font-size:13px;font-weight:300;color:var(--ink3);margin-top:4px">Case submissions &amp; general enquiries</div>
+        </div>
+        <div class="card flat" style="padding:1.75rem">
+          <div style="font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--emerald);margin-bottom:.75rem">Platform</div>
+          <a href="QPathOne_Platform.html" style="font-size:15px;font-weight:400;color:var(--ink);transition:color 0.2s" onmouseover="this.style.color='#2FA37C'" onmouseout="this.style.color='#0D1F19'">Submit a case directly →</a>
+          <div style="font-size:13px;font-weight:300;color:var(--ink3);margin-top:4px">Access the QPathOne platform</div>
+        </div>
+        <div class="card flat" style="padding:1.75rem">
+          <div style="font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--emerald);margin-bottom:.75rem">Response time</div>
+          <div style="font-size:15px;font-weight:400;color:var(--ink)">Within one working day</div>
+          <div style="font-size:13px;font-weight:300;color:var(--ink3);margin-top:4px">For urgent cases, please indicate in your message</div>
+        </div>
+        <div style="background:var(--forest);border-radius:16px;padding:1.75rem;color:white">
+          <div class="brand-line" style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7">Designed by a practising Consultant pathologist. Built for the future of pathology.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name wordmark">Q<span class="w-path">Path</span><span class="w-one">One</span></div>
+        <div class="footer-tagline">Expert pathology.<br>Wherever you are.</div>
+        <div class="brand-line" style="color:rgba(255,255,255,0.2)">Designed by a practising Consultant pathologist.<br>Built for the future of pathology.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="platform.html">Platform</a>
+          <a href="services.html">Services</a>
+          <a class="active" href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <a href="mailto:enquiries@QPath1.com">enquiries@QPath1.com</a>
+          <a href="QPathOne_Platform.html">Open Platform →</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 QPathOne. All rights reserved.</div>
+      <div class="footer-creds">UK GMC &nbsp;·&nbsp; US Board Certified &nbsp;·&nbsp; Nigeria / Africa / Asia / World</div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// Fade up animations
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+// Show success if redirected back
+if (window.location.search.includes('sent=true')) {
+  var form = document.getElementById('contact-form');
+  if (form) {
+    form.innerHTML = '<div style="text-align:center;padding:3rem 2rem">'
+      + '<div style="font-size:40px;margin-bottom:1rem;color:#2FA37C">&#10003;</div>'
+      + '<h3 style="font-family:Cormorant Garamond,Georgia,serif;font-size:1.75rem;font-weight:600;color:#0D1F19;margin-bottom:.75rem">Message received</h3>'
+      + '<p style="font-size:14px;font-weight:300;color:#5C7268;line-height:1.8;max-width:400px;margin:0 auto">Thank you. We will respond within one working day.</p>'
+      + '</div>';
+  }
+}
+</script>
+</body>
+</html>
